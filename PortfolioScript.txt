@@ -1,0 +1,84 @@
+#**********************************************************************
+#Script for portfolio contact form database
+#Name				Date		Description
+#Scott Pinkerton	9.03.20			Added permissions for my_user
+#**************************************************************************
+DROP DATABASE IF EXISTS portfoliocontact;
+CREATE DATABASE portfoliocontact;
+use portfoliocontact;
+
+CREATE TABLE IF NOT EXISTS employee
+(
+    employeeID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name  VARCHAR(255) NOT NULL
+    
+);
+
+CREATE TABLE IF NOT EXISTS contacts(
+    contactID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    contactName VARCHAR(255) NOT NULL,
+    contactEmail VARCHAR(255) NOT NULL,
+    contactMsg VARCHAR(65535) NOT NULL,
+    contactDate DATETIME NOT NULL,
+    employeeID INT NOT NULL,
+    FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
+    );
+#create user and grant permissions
+use portfoliocontact;
+GRANT SELECT, INSERT, UPDATE
+ON portfoliocontact.*
+TO my_user
+IDENTIFIED by 'Pa$$w0rd';
+   
+#insert test data
+INSERT INTO employee
+	(first_name,last_name)
+VALUES
+	('Buster', 'Bronco'),
+    ('Joe','Vandal'),
+    ('Buddy','Rich'),
+    ('Joey','Lamb'),
+    ('Richey','Sambora'),
+    ('Glen','Frey'),
+    ('John','Mellencamp'),
+    ('Jim','Croce'),
+    ('Buddy','Rice'),
+    ('Joe','Rogan'),
+    ('Scott','Stapp'),
+    ('Jones','Straw'),
+    ('Jimmie','Ray'),
+    ('Alan','Harper'),
+    ('Brady', 'Bunch'),
+    ('Cole','Trickle'),
+    ('Don','Ho'),
+    ('Everest','Mount'),
+    ('Fred','Durst'),
+    ('George','Peppard');
+    
+ #insert test data into contacts
+    INSERT INTO contacts
+    	(contactName,contactEmail,contactMSG,contactDate,employeeID)
+    VALUES	
+    	('Mickey Mouse','mickey@mouse.com','Hello',NOW(),1),
+     	('Minnie Mouse','minnie@mouse.com','Hi',NOW(),1),
+        ('Harold Maude','harold@maude.com','Howdy',NOW(),1),
+        ('Iggy Pop','iggy@pop.com','Yo',NOW(),1),
+        ('Johnny Depp','johnny@depp.com','Hello',NOW(),1),
+        ('Johnny Cash','johnny@cash.com','Hiya',NOW(),1),
+        ('Kyle Busch','kyle@busch.com','Hiya',NOW(),1),
+        ('Kurt Busch','kurt@busch.com','Hiya',NOW(),1),
+        ('Lonny Lover','lonny@lover.com','Hiya',NOW(),1),
+        ('Mike Matisow','mike@lover.com','Hiya',NOW(),1),
+        ('Michael Meyers','michael@meyers.com','Hiya',NOW(),1),
+        ('Mitch McDear','mitch@mcdear.com','Hiya',NOW(),1),
+        ('Manny Paq','manny@paq.com','Hiya',NOW(),1),
+        ('Nathan Lane','nathan@lane.com','Hiya',NOW(),1),#14
+        ('Nate Hook','nate@hook.com','Hiya',NOW(),1),
+        ('OJ Simpson','OJ@simpson.com','Hiya',NOW(),1),
+        ('Paul Rudd','paul@rudd.com','Hiya',NOW(),1),
+        ('Peter Rabbit','peter@rabbit.com','Hiya',NOW(),1),
+        ('Paul Mary','Paul@Mary.com','Hiya',NOW(),1),
+        ('Randy Rover','randy@rover.com','Hiya',NOW(),1);
+        
+        

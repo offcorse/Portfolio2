@@ -1,0 +1,29 @@
+hr {
+   background-color: white;
+    height:2px;
+
+}
+p {
+    color:grey;
+}
+
+button {
+    background-color:   aliceblue;
+}
+
+li {
+    color: grey;
+}
+
+.cornsilk{
+    background-color: cornsilk;
+    border:20px;
+    border-radius: 50px;
+    height: auto;
+    width: 80%;
+    margin: auto;
+}
+
+.black {
+    color:black;
+}
