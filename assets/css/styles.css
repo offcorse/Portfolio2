@@ -1,12 +1,15 @@
-/* the styles for the html elements 
+/* 
 *
-*
-*
-*
+*Author: Scott Pinkerton
+*Created: ???
+*Modified: 9/11/2020
+*Mod Log: Added css for db admin page
 *
 */
 
-
+div.container{
+    background-image: url(../img/br-mountains-header-min.jpg);
+}
 
 .cornsilk {
     background-color: cornsilk;
