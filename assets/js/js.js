@@ -1,6 +1,6 @@
 function ExpandDivOne() {
   var x = document.getElementById("divOne");
-    var x2 = document.getElementById("btn1")
+    var x2 = document.getElementById("btn1");
   if (x.style.display === "none") {
     x.style.display = "block";
     x2.innerHTML = "Hide Section";
@@ -13,7 +13,7 @@ function ExpandDivOne() {
 
 function ExpandDivTwo() {
   var x = document.getElementById("divTwo");
-    var x2 = document.getElementById("btn2")
+    var x2 = document.getElementById("btn2");
   if (x.style.display === "none") {
     x.style.display = "block";
     x2.innerHTML = "Hide Section";
@@ -26,7 +26,7 @@ function ExpandDivTwo() {
 
 function ExpandDivThree() {
   var x = document.getElementById("divThree");
-    var x2 = document.getElementById("btn3")
+    var x2 = document.getElementById("btn3");
   if (x.style.display === "none") {
     x.style.display = "block";
     x2.innerHTML = "Hide Section";
@@ -39,7 +39,7 @@ function ExpandDivThree() {
 
 function ExpandDivFour() {
   var x = document.getElementById("divFour");
-    var x2 = document.getElementById("btn4")
+    var x2 = document.getElementById("btn4");
   if (x.style.display === "none") {
     x.style.display = "block";
     x2.innerHTML = "Hide Section";

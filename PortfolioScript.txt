@@ -2,6 +2,7 @@
 #Script for portfolio contact form database
 #Name				Date		Description
 #Scott Pinkerton	9.03.20			Added permissions for my_user
+#Scott                  9.11.20                 Added DELETE permission for my_user
 #**************************************************************************
 DROP DATABASE IF EXISTS portfoliocontact;
 CREATE DATABASE portfoliocontact;
@@ -26,7 +27,7 @@ CREATE TABLE IF NOT EXISTS contacts(
     );
 #create user and grant permissions
 use portfoliocontact;
-GRANT SELECT, INSERT, UPDATE
+GRANT SELECT, INSERT, UPDATE, DELETE
 ON portfoliocontact.*
 TO my_user
 IDENTIFIED by 'Pa$$w0rd';
