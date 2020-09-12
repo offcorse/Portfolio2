@@ -4,12 +4,9 @@
 *Created: ???
 *Modified: 9/11/2020
 *Mod Log: Added css for db admin page
-*
+*         
 */
 
-div.container{
-    background-image: url(../img/br-mountains-header-min.jpg);
-}
 
 .cornsilk {
     background-color: cornsilk;
@@ -21,7 +18,6 @@ table {
     border: 1px solid white;
     border-collapse: collapse;
     position:relative;
-    float: right;
 }
 td, th {
     border: 1px dashed white;
@@ -33,9 +29,14 @@ li{
     list-style-type: none;
     
 }
+li:active a {
+    background-color: red;
+}
+
 aside {
     float: left;
     width: 150px;
+    margin-right: 100px;
 }
 footer{
     clear: both;

@@ -8,7 +8,7 @@
 #Modified by: Scott                                          
 #Modification log: Initial release 1.0
 #                  Bug in the footer position that I can't figure out yet in the css.
-
+#                   Added background image to header
  --
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
@@ -18,6 +18,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>rscottpinkerton</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/Header.css">
     <link type="text/css" rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
@@ -35,7 +36,7 @@
 <body id="page-top">
     
     <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="index.html" style="font-family: Lora, serif;">rscottpinkerton</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive"
+        <div class="container hdr"><a class="navbar-brand js-scroll-trigger" href="index.html" style="font-family: Lora, serif;">rscottpinkerton</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
@@ -97,6 +98,7 @@ $statement3->closeCursor();
             </li>
             <?php endforeach; ?>
       </aside> 
+    
         <table class="contacts">
             <tr>
                 <th>Name</th>
