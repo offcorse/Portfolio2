@@ -1,25 +1,14 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
-NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLASS.
 
 #Original Author: Scott Pinkerton   
-#Date Created: 02/15/2020                                         
-#Version: 1.3                                                   
+#Date Created: 09/18/2020                                         
+#Version: 1.0                                                   
 #Date Last Modified:09/18/2020                                
 #Modified by: Scott                                          
-#Modification log: Initial relese 1.0
+#Modification log: Initial release 1.0
 
-#Modified by: Scott                                          
-#Modification log: Removed social icons
-
-#Modified by: Scott                                          
-#Modification log: Added shooting stars JS and html
-
-#Modified by: Scott                                          
-#Modification log:  Set background color of div and centered images in slideshow
  --
-#Modified by: Scott                                          
-#Modification log: Added link to admin login page
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
 <html>
@@ -40,13 +29,6 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/fade.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
-    <style>
-
-</style>
-
 <link rel="icon" 
       type="image/png" 
       href="assets/img/small_sp.png">
@@ -59,10 +41,10 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html#about">Pro About</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about">Pro About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="Pers%20About.html">Pers About</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">GUI Portfolio</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
@@ -70,79 +52,15 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
             </div>
         </div>
     </nav>
-    <!--shoot stars canvas-->
-    <canvas id="canvas1" width="1500" height="100px";></canvas>
     
-    <!--The shooting star javascript works when loaded here just below the canvas-->
-    <script src="assets/js/shootingstars.js"></script>
-    
-    <a class="nav-link js-scroll-trigger" href="assets/files/Scott%20Pinkerton%20GUI%20Portfolio%20(5).pdf">Open Portfolio PDF Version</a>
-    <br>
-    
-    <div style="text-align: center;">
-    Quick Portfolio - Examples of different GUI's and applications built for the Global Inkjet Industry (Plus....)
-    </div>
-    <br>
-    <hr>
-   <div class="slideshow-container">
-
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/1.png" >
-        </div>
-
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/2.png">
-           </div>
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/3.png">
-        </div>
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/4.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/5.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/6.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/7.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/8.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/9.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/10.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/11.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/12.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/13.png">
-        </div>
-    </div>
-    <br>
-
-    <div style="text-align:center">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <div class="contact-clean" style="background-color: rgb(0,0,0);">
+        <form id="contact" method="post" action="admin.php"> <!--changed action to thankyou.php page-->
+            <h2 class="text-center">Admin Login</h2>
+            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required></div><!--Added 'required' to all fields-->
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+            <div class="form-group"><button class="btn btn-primary" type="submit">Submit </button></div>
+        </form>
+        
     </div>
     <div class="footer-dark">
         <footer>
@@ -164,9 +82,6 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
-    
-    <script src="assets/js/Fade.js"></script>
-    
 </body>
 
 </html>

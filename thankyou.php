@@ -3,11 +3,14 @@
 
 #Original Author: Scott Pinkerton   
 #Date Created: 09/03/2020                                         
-#Version: 1.0                                                    
-#Date Last Modified:09/03/2020                                
+#Version: 1.1                                                    
+#Date Last Modified:09/18/2020                                
 #Modified by: Scott                                          
 #Modification log: Initial release 1.0
 
+#Modified by: Scott                                          
+#Modification log: Added function call to addContact
+                    Added link to admin login page
  --
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
@@ -47,6 +50,7 @@
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
                 </ul>
             </div>
         </div>
@@ -72,32 +76,11 @@
         echo "Form Data Error: " . $error; 
         exit();
         } else {
-            $dsn = 'mysql:host=localhost;dbname=portfoliocontact';
-            $username = 'my_user';
-            $password = 'Pa$$w0rd';
 
-            try {
-                $db = new PDO($dsn, $username, $password);
-
-            } catch (PDOException $e) {
-                $error_message = $e->getMessage();
-                /* include('database_error.php'); */
-                echo "DB Error: " . $error_message; 
-                exit();
-            }
-
+            require_once('./Model/database.php');
+            require_once('./Model/contacts.php');
             // Add the product to the database  
-            $query = 'INSERT INTO contacts
-                         (contactName, contactEmail, contactMsg, contactDate, employeeID)
-                      VALUES
-                         (:contactName, :contactEmail, :contactMsg, NOW(), 1)';
-            $statement = $db->prepare($query);
-            $statement->bindValue(':contactName', $visitor_name);
-            $statement->bindValue(':contactEmail', $visitor_email);
-            $statement->bindValue(':contactMsg', $visitor_msg);
-            $statement->execute();
-            $statement->closeCursor();
-            /* echo "Fields: " . $visitor_name . $visitor_email . $visitor_msg; */
+            addContact($visitor_name, $visitor_email, $visitor_msg);
 
 }
 

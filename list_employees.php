@@ -1,25 +1,14 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
-NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLASS.
 
 #Original Author: Scott Pinkerton   
-#Date Created: 02/15/2020                                         
-#Version: 1.3                                                   
-#Date Last Modified:09/18/2020                                
+#Date Created: 09/16/2020                                         
+#Version: 1.0                                                    
+#Date Last Modified:09/16/2020                                
 #Modified by: Scott                                          
-#Modification log: Initial relese 1.0
+#Modification log: Initial release 1.0
 
-#Modified by: Scott                                          
-#Modification log: Removed social icons
-
-#Modified by: Scott                                          
-#Modification log: Added shooting stars JS and html
-
-#Modified by: Scott                                          
-#Modification log:  Set background color of div and centered images in slideshow
  --
-#Modified by: Scott                                          
-#Modification log: Added link to admin login page
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
 <html>
@@ -40,13 +29,6 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/fade.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
-    <style>
-
-</style>
-
 <link rel="icon" 
       type="image/png" 
       href="assets/img/small_sp.png">
@@ -59,13 +41,12 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html#about">Pro About</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about">Pro About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="Pers%20About.html">Pers About</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">GUI Portfolio</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
                 </ul>
             </div>
         </div>
@@ -75,75 +56,112 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
     
     <!--The shooting star javascript works when loaded here just below the canvas-->
     <script src="assets/js/shootingstars.js"></script>
+<?php
+
+    class Database {
+    private static $dsn = 'mysql:host=localhost;dbname=portfoliocontact';
+    private static $username = 'my_user';
+    private static $password = 'Pa$$w0rd';
+    private static $db;
+
+    private function __construct() {}
+
+    public static function getDB () {
+        if (!isset(self::$db)) {
+            try {
+                self::$db = new PDO(self::$dsn,
+                                     self::$username,
+                                     self::$password);
+            } catch (PDOException $e) {
+                $error_message = $e->getMessage();
+                //include('../errors/database_error.php');
+                echo "Connection Error";
+                exit();
+            }
+        }
+        return self::$db;
+    }
+}
+
+class Employee {
+    private $id;
+    private $first_name;
+    private $last_name;
     
-    <a class="nav-link js-scroll-trigger" href="assets/files/Scott%20Pinkerton%20GUI%20Portfolio%20(5).pdf">Open Portfolio PDF Version</a>
-    <br>
+    public function __construct($id,$first_name,$last_name) {
+        $this->id = $id;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+    }
     
-    <div style="text-align: center;">
-    Quick Portfolio - Examples of different GUI's and applications built for the Global Inkjet Industry (Plus....)
-    </div>
-    <br>
-    <hr>
-   <div class="slideshow-container">
+    public function getID(){
+        return $this->id;
+    }
+    
+    public function setID($id){
+        $this->id = $id;
+    }
+    
+    public function getFirstName(){
+        return $this->first_name;
+    }
+    
+    public function setFirstName($first_name){
+        $this->first_name = $first_name;
+    }
+    
+    public function getLastName(){
+        return $this->last_name;
+    }
+    
+    public function setLastName($last_name){
+        $this->last_name = $last_name;
+    }
+}
 
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/1.png" >
-        </div>
+class EmployeeDB {
+    public static function getEmployees() {
+        $db = Database::getDB();
+        $query = 'SELECT * FROM employee
+                  ORDER BY last_name';
+        $statement = $db->prepare($query);
+        $statement->execute();
+        
+        $employees = array();
+        foreach ($statement as $row) {
+            $employee = new Employee($row['employeeID'],
+                                     $row['first_name'],
+                                     $row['last_name']);
+            $employees[] = $employee;
+        }
+        return $employees;
+    }
 
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/2.png">
-           </div>
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/3.png">
-        </div>
-        <div class="mySlides fade cornsilk">
-          <img src="assets/img/4.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/5.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/6.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/7.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/8.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/9.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/10.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/11.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/12.png">
-        </div>
-       <div class="mySlides fade cornsilk">
-          <img src="assets/img/13.png">
-        </div>
-    </div>
-    <br>
+}
 
-    <div style="text-align:center">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+$employees = EmployeeDB::getEmployees();
+
+?>
+<section>
+  <h2>Employee Listing</h2>
+<aside>
+        <!-- display a list of categories -->
+        <h2>Employee</h2>
+        <nav>
+        <ul>
+        <?php foreach ($employees as $employee) : ?>
+            <li>
+            <a href="?employee_id=<?php echo $employee->getID(); ?>">
+                <?php echo $employee->getLastName() . ", " . $employee->getFirstName(); ?>
+            </a>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        </nav>
+    </aside>
+
+  <p>&nbsp;</p>
+</section>
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -164,9 +182,7 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
-    
-    <script src="assets/js/Fade.js"></script>
-    
 </body>
 
 </html>
+

@@ -4,11 +4,14 @@
 #Original Author: Scott Pinkerton   
 #Date Created: 09/11/2020                                         
 #Version: 1.0                                                    
-#Date Last Modified:09/11/2020                                
+#Date Last Modified:09/18/2020                                
 #Modified by: Scott                                          
 #Modification log: Initial release 1.0
 #                  Bug in the footer position that I can't figure out yet in the css.
 #                   Added background image to header
+Modified by: Scott                                          
+#Modification log: Added function calls to the database's
+#                  Added link to admin login page 
  --
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
@@ -47,6 +50,7 @@
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +62,9 @@
     <script src="assets/js/shootingstars.js"></script>
 <?php
     
-    require_once('database.php');
+    require_once('./Model/database.php');
+    require_once('./Model/employee.php');
+    require_once('./Model/contacts.php');
     
     //echo "connection ok"
     // Get employeeID
@@ -70,22 +76,10 @@
     }
 }
 // Get all employees
-$query = 'SELECT * FROM employee
-                       ORDER BY employeeID';
-$statement = $db->prepare($query);
-$statement->execute();
-$employees = $statement->fetchAll();
-$statement->closeCursor();
+$employees = getEmployees();
 
 // Get visitors for selected employee
-$queryContacts = 'SELECT * FROM contacts
-    WHERE employeeID = :employeeID
-                  ORDER BY contactID';
-$statement3 = $db->prepare($queryContacts);
-$statement3->bindValue(':employeeID', $employeeID);
-$statement3->execute();
-$contacts = $statement3->fetchAll();
-$statement3->closeCursor();
+$contacts = getContactsByEmp($employeeID);
 ?>
 <section>
     <aside>
