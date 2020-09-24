@@ -7,6 +7,11 @@
 *         
 */
 
+.bg-image {
+    background-image: url(../img/beach1.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .cornsilk {
     background-color: cornsilk;

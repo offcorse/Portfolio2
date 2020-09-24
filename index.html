@@ -5,7 +5,7 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
 #Original Author: Scott Pinkerton   
 #Date Created: 02/15/2020                                         
 #Version: 1.2                                                    
-#Date Last Modified:09/18/2020                                
+#Date Last Modified:09/23/2020                                
 #Modified by: Scott                                          
 #Modification log: Initial relese 1.0
 
@@ -21,6 +21,9 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
                    Add 'required' attributes to for fields.
 #Modified by: Scott                                          
 #Modification log: Added link to admin login page
+
+#Modified by: Scott                                          
+#Modification log: Changed admin link to admin.php
  --
 ------------------------------------------------------------------------------------------------------------------>
 
@@ -58,14 +61,13 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
                 aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about">Pro About</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">Pro About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="Pers%20About.html">Pers About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">GUI Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="admin.php">Admin</a></li>
                 </ul>
             </div>
         </div>
@@ -102,10 +104,10 @@ NOTE: THIS IS A NEW VERSION OF A PORTFOLIO, NOT THE ONE USED IN THE PREVIOUS CLA
             </div>
         </div>
     </section>
-    <div data-bs-parallax-bg="true" style="height: 500px;background-image: url(&quot;assets/img/100_0642.jpg&quot;);background-position: center;background-size: cover;"></div>
+    <div data-bs-parallax-bg="true" style="height: 500px;background-image: url(&quot;assets/img/100_0642.jpg&quot;);background-position: center;background-size: contain;"></div>
     
     <!-- contact form-->
-    <div class="contact-clean" style="background-color: rgb(0,0,0);">
+    <div class="contact-clean" style="background-color: lightskyblue ;background-image: url(assets/img/beach2.jpg); background-repeat: no-repeat ; background-size: cover">
         <form id="contact" method="post" action="thankyou.php"> <!--changed action to thankyou.php page-->
             <h2 class="text-center">Contact ME</h2>
             <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required></div><!--Added 'required' to all fields-->

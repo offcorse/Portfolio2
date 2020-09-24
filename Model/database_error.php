@@ -40,9 +40,8 @@
                 aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about">Pro About</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">Pro About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="Pers%20About.html">Pers About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
@@ -51,11 +50,11 @@
             </div>
         </div>
     </nav>
-    <!--shoot stars canvas-->
-    <canvas id="canvas1" width="1500" height="100px";></canvas>
+   <!--shoot stars canvas
+    <canvas id="canvas1" width="1500" height="100px";></canvas>-->
     
-    <!--The shooting star javascript works when loaded here just below the canvas-->
-    <script src="assets/js/shootingstars.js"></script>
+    <!--The shooting star javascript works when loaded here just below the canvas
+    <script src="assets/js/shootingstars.js"></script>-->
 
     <h1>Database Error</h1>
         <p>There was an error connecting to the database.</p>
@@ -72,7 +71,7 @@
                     <div class="col item social"><a href="https://www.linkedin.com/in/rscottpinkerton/" target=_blank><i class="icon ion-social-linkedin"></i></a>
                         <a href="https://github.com/offcorse/" target="_blank"><i class="icon ion-social-github"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">Pinkerton © 2020</p>
             </div>
         </footer>
     </div>

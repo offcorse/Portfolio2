@@ -50,16 +50,16 @@
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="admin.php">Admin</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--shoot stars canvas-->
-    <canvas id="canvas1" width="1500" height="100px";></canvas>
+    <!--shoot stars canvas
+    <canvas id="canvas1" width="1500" height="100px";></canvas>-->
     
-    <!--The shooting star javascript works when loaded here just below the canvas-->
-    <script src="assets/js/shootingstars.js"></script>
+    <!--The shooting star javascript works when loaded here just below the canvas
+    <script src="assets/js/shootingstars.js"></script>-->
 <?php
     
     $visitor_name = filter_input(INPUT_POST, 'name');
@@ -99,7 +99,7 @@
                     <div class="col item social"><a href="https://www.linkedin.com/in/rscottpinkerton/" target=_blank><i class="icon ion-social-linkedin"></i></a>
                         <a href="https://github.com/offcorse/" target="_blank"><i class="icon ion-social-github"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">Pinkerton © 2020</p>
             </div>
         </footer>
     </div>

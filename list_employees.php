@@ -4,11 +4,12 @@
 #Original Author: Scott Pinkerton   
 #Date Created: 09/16/2020                                         
 #Version: 1.0                                                    
-#Date Last Modified:09/16/2020                                
+#Date Last Modified:09/23/2020                                
 #Modified by: Scott                                          
 #Modification log: Initial release 1.0
-
- --
+#Modified by: Scott                                          
+#Modification log: Removed db constructor and included database.php constructor
+ --                 Added admin.php link
 ------------------------------------------------------------------------------------------------------------------>
 <!DOCTYPE html>
 <html>
@@ -47,42 +48,20 @@
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="admin.php">Admin</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--shoot stars canvas-->
-    <canvas id="canvas1" width="1500" height="100px";></canvas>
+    <!--shoot stars canvas
+    <canvas id="canvas1" width="1500" height="100px";></canvas>-->
     
-    <!--The shooting star javascript works when loaded here just below the canvas-->
-    <script src="assets/js/shootingstars.js"></script>
+    <!--The shooting star javascript works when loaded here just below the canvas
+    <script src="assets/js/shootingstars.js"></script>-->
 <?php
+require_once('./Model/database.php');
 
-    class Database {
-    private static $dsn = 'mysql:host=localhost;dbname=portfoliocontact';
-    private static $username = 'my_user';
-    private static $password = 'Pa$$w0rd';
-    private static $db;
-
-    private function __construct() {}
-
-    public static function getDB () {
-        if (!isset(self::$db)) {
-            try {
-                self::$db = new PDO(self::$dsn,
-                                     self::$username,
-                                     self::$password);
-            } catch (PDOException $e) {
-                $error_message = $e->getMessage();
-                //include('../errors/database_error.php');
-                echo "Connection Error";
-                exit();
-            }
-        }
-        return self::$db;
-    }
-}
-
+//class for employee table
 class Employee {
     private $id;
     private $first_name;

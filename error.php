@@ -2,9 +2,9 @@
 --
 
 #Original Author: Scott Pinkerton   
-#Date Created: 09/18/2020                                         
-#Version: 1.0                                                   
-#Date Last Modified:09/18/2020                                
+#Date Created: 09/23/2020                                         
+#Version: 1.0                                                    
+#Date Last Modified:09/23/2020                                
 #Modified by: Scott                                          
 #Modification log: Initial release 1.0
 
@@ -40,28 +40,31 @@
                 aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="index.html">Home</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" href="#about">Pro About</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">Pro About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="Pers%20About.html">Pers About</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="portfolio2.html">Portfolio</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="resume.html">Resume</a></li>
                     <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html#contact">contact</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="login.php">Admin</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="admin.php">Admin</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- form for name and password to get to admin page -->
-    <div class="contact-clean" style="background-color: rgb(0,0,0);">
-        <form id="contact" method="post" action="admin.php"> <!--changed action to thankyou.php page-->
-            <h2 class="text-center">Admin Login</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required></div><!--Added 'required' to all fields-->
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
-            <div class="form-group"><button class="btn btn-primary" type="submit">Submit </button></div>
-        </form>
-        
-    </div>
+   <!--shoot stars canvas
+    <canvas id="canvas1" width="1500" height="100px";></canvas>-->
+    
+    <!--The shooting star javascript works when loaded here just below the canvas
+    <script src="assets/js/shootingstars.js"></script>-->
+
+    <h1>General Error</h1>
+        <p>The website encountered an error. Please contact admin.</p>
+<section>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <p>&nbsp;</p>
+</section>
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -69,7 +72,7 @@
                     <div class="col item social"><a href="https://www.linkedin.com/in/rscottpinkerton/" target=_blank><i class="icon ion-social-linkedin"></i></a>
                         <a href="https://github.com/offcorse/" target="_blank"><i class="icon ion-social-github"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">Pinkerton © 2020</p>
             </div>
         </footer>
     </div>
@@ -85,3 +88,4 @@
 </body>
 
 </html>
+

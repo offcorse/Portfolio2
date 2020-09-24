@@ -27,14 +27,14 @@ function create_particle()
 	this.vy = Math.random()*20-10;
 	
 	//Random colors
-	//var r = Math.random()*255>>0;
-	//var g = Math.random()*255>>0;
-	//var b = Math.random()*255>>0;
-	//this.color = "rgba("+r+", "+g+", "+b+", 0.5)";
-	this.color = "white";
+	var r = Math.random()*255>>0;
+	var g = Math.random()*255>>0;
+	var b = Math.random()*255>>0;
+	this.color = "rgba("+r+", "+g+", "+b+", 0.5)";
+	//this.color = "white";
 	//Random size
 	//this.radius = Math.random()*20+20;
-    this.radius = 3;
+    this.radius = 10;
 }
 
 var x = 100; var y = 100;
