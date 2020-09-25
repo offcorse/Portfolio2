@@ -83,14 +83,16 @@
             addContact($visitor_name, $visitor_email, $visitor_msg);
 
 }
-    } catch (Exception $e){
+    
+?>
+<section>
+  <h2>Thank you, <?php echo $visitor_name; ?>, for contacting me! I will get back to you shortly.</h2>
+  <?php } catch (Exception $e){
         $error_message = $e->getMessage();
                 include('database_error.php');
                 exit();
     }
-?>
-<section>
-  <h2>Thank you, <?php echo $visitor_name; ?>, for contacting me! I will get back to you shortly.</h2>
+    ?>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
 
