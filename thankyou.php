@@ -61,7 +61,7 @@
     <!--The shooting star javascript works when loaded here just below the canvas
     <script src="assets/js/shootingstars.js"></script>-->
 <?php
-    
+    try{
     $visitor_name = filter_input(INPUT_POST, 'name');
     $visitor_email = filter_input(INPUT_POST, 'email');
     $visitor_msg = filter_input(INPUT_POST, 'message');
@@ -83,7 +83,11 @@
             addContact($visitor_name, $visitor_email, $visitor_msg);
 
 }
-
+    } catch (Exception $e){
+        $error_message = $e->getMessage();
+                include('database_error.php');
+                exit();
+    }
 ?>
 <section>
   <h2>Thank you, <?php echo $visitor_name; ?>, for contacting me! I will get back to you shortly.</h2>
