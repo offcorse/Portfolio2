@@ -4,7 +4,7 @@ hr {
 
 }
 p {
-    color:grey;
+    color:black;
 }
 
 button {
@@ -12,13 +12,13 @@ button {
 }
 
 li {
-    color: grey;
+    color: black;
 }
 
 .cornsilk{
     background-color: lightskyblue;
     border:20px;
-    border-radius: 50px;
+    border-radius: 20px;
     height: auto;
     width: 80%;
     margin: auto;
